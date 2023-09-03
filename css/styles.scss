@@ -1,0 +1,167 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+	"farve": $cyan-400,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+
+.navbar{
+	height: 10vh;
+}
+.header{
+	background-color: rgba(0, 0, 0, 0.97);
+	height: 100vh;
+	background-position: right 600rem;
+	background-size: 25px 25px;
+	transition: 50s;
+}
+.header-text{
+	font-family: "Montserrat ExtraBold";
+	font: bolder;
+	position: relative;
+	top: 80%;
+	transition: 200ms;
+}
+.credit{
+	font-size: 1rem;
+	color: #4d4d4d;
+	font-family: "Montserrat SemiBold";
+}
+.word{
+	color: white;
+	font-family: Montserrat;
+	font: bolder;
+}
+.aboutbox{
+height: 50vh;
+}
+
+
+//animation//
+
+.dots{
+	background-image: radial-gradient(#000000 3px, transparent 0);
+	background-size: 25px 25px;
+	animation: animation 80s linear infinite;
+}
+.word:hover{
+	background-image: linear-gradient(45deg, #f6206b, #cb62ff);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+}
+.extra{
+	background-image: linear-gradient(45deg, #f6206b, #bd3bff);
+	background-size: 500%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	animation: animation 2s linear infinite ;
+	transition: 200ms;
+}
+
+@keyframes animation{
+	0%{
+		background-position: 0;
+	}
+	50%{
+		background-position: 100%;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+//animation-end//
+
+.imgbox{
+	min-height: 50vh;
+	height: 100vh;
+	transition: 500ms;
+}
+.panel{
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+}
+.panel1 {
+
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: 500ms;
+}
+.panel2 {
+
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: 500ms;
+}
+.panel3 {
+
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: 500ms;
+}
+.panelO:hover{
+	transition: 500ms;
+	transform: scale(1.1);
+}
+//text//
+.abouttext{
+	font-family:"Bohemian Typewriter";
+	font-size: 1.4rem;
+}
+//text-end//
+//Dark-mode//
+.bodybg{
+	background-color: white;
+	color: black;
+}
+.bodybg.dark-mode {
+	background-color: #121212;
+	color: #ffffff;
+}
+//Dark-mode-end//
+.switch {
+	height: 30px;
+	width: 75px;
+	background-color: white;
+	border-radius: 20px;
+}
+.switch input{
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.slider{
+	border-radius: 25px;
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	background-color: #aa69ea;
+	transition: 400ms;
+}
+input:checked + .slider {
+	transform: translateX(26px);
+	background-color: #1f1f1f;
+	transition: 400ms;
+}
